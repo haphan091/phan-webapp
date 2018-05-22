@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tieu luan tot nghiep</title>
+  <meta charset="utf-8">
+  <!-- Only required for desktop -->
+		<link rel="stylesheet" href="/dist/css/mobile-angular-ui-hover.min.css" />
+		<!-- Always required -->
+		<link rel="stylesheet" href="/dist/css/mobile-angular-ui-base.min.css" />
+		<!-- Only required for desktop -->
+		<link rel="stylesheet" href="/dist/css/mobile-angular-ui-desktop.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="/angular.min.js"></script>
+		<script src="/dist/js/mobile-angular-ui.min.js"></script>
+		<script src="/dist/socket.io.min.js"></script>
+		<script src="/socket.min.js"></script>
+		<script src="/webapp.js"></script>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+</head>
+<body ng-app="myApp" ng-controller="Home">
+  <div class="container">
+    <div class="row text-center page-header">
+	 <h1 class="bg-primary">HỌC VIỆN HÀNG KHÔNG VIỆT NAM</h1>
+	   <h2 class="bg-primary">TIỂU LUẬN TỐT NGHIỆP</h2>
+      <h3 class="bg-primary">HỆ THỐNG THU THẬP DỮ LIỆU CẢM BIẾN VÀ ĐIỀU KHIỂN THIẾT BỊ THÔNG QUA INTERNET </h3>
+    </div>
+    <div class="row text-center panel panel-info">
+      <div class="panel-heading">
+        Cảm biến
+    </div>
+    <div class="panel-body">
+    <div class="col-xs-4">
+      <img src="img/Gas-48.png" title="Gas" width="48" height="48">
+      Khí Gas
+    </div>
+    <div class="col-xs-4">
+      <img src="img/Temperature-48.png" title="Temperature" width="48" height="48">
+      Nhiệt độ
+    </div>
+    <div class="col-xs-4">
+      <!-- Partly Cloudy Day icon by Icons8 -->
+<img src="img/Partly Cloudy Day-48.png" title="Partly Cloudy Day" width="48" height="48">
+      Độ ẩm
+    </div>
+    <button class="btn-primary" type="button"><span class="glyphicon glyphicon-refresh"></span> Cập nhật</button>
+    </div>
+  </div>
+  <div class="row text-center panel panel-info">
+    <div class="panel-heading">
+      Gửi thông báo xuống LCD
+    </div>
+    <div class="panel-body">
+    <div class="col-xs-6"><input type="text" placeholder="Dòng trên" required></div>
+    <div class="col-xs-6"><input type="text" placeholder="Dòng dưới" required></div>
+    </div>
+  </div>
+  <div class="row text-center panel panel-info">
+    <div class="panel-heading">
+      Điều khiển thiết bị
+    </div>
+    <div class="panel-body">
+    <div class="col-xs-6" ng-repeat="led_value in leds_status track by $index">
+      <img src="img/Light On-48.png" title="Light On" width="48" height="48">
+      Đèn  {{$index}}
+    </div>
+  </div>
+  </div>
+  <div class="row text-right panel panel-primary">
+    <div class="panel-heading">
+      Người thực hiện
+    </div>
+    <div class="panel_body">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-8">HÀ QUANG PHAN</div>
+    <div class="col-xs-4"></div>
+    <div class="col-xs-8">Lớp: DV2-K8  MSSV: 1453020072</div>
+  </div>
+
+  </div>
+</div>
+</body>
+</html>
