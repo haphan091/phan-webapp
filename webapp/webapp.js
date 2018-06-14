@@ -13,6 +13,7 @@ app.controller('myCtrl', function($scope, mySocket){
   $scope.CamBienGas = "Chưa được cập nhật";
   $scope.CamBienND = "Chưa được cập nhật";
   $scope.CamBienDA = "Chưa được cập nhật";
+  $scope.CamBienMua = "Chưa được cập nhật";
   $scope.leds_status = [1, 1]
   $scope.lcd = ["", ""]
 
@@ -51,6 +52,7 @@ app.controller('myCtrl', function($scope, mySocket){
     mySocket.on('SENSOR', function(json) {
     	$scope.gtGas = json.gas
 		$scope.CamBienGas = (json.gas == 0) ? "An toàn!" : "Nguy hiểm có khi gas!"
+		$scope.CamBienMua = (json.mua == 0) ? "Trời không mưa" : "Có mưa!"
 		$scope.CamBienND = json.temp + " độ C"
 		$scope.CamBienDA = json.humidity + " %"
 	})
